@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button onclick="showCreateFileModal()">Create File</button>
+            <button onclick="showCreateDirModal()">Create Directory</button>
+            <button onclick="refreshFiles()">Refresh</button>
+        </div>
+        
+        <div id="currentPath"></div>
+        <div id="fileList"></div>
+    </div>
+
+    <!-- Create File Modal -->
+    <div id="createFileModal" class="modal">
+        <div class="modal-content">
+            <h2>Create New File</h2>
+            <input type="text" id="newFileName" placeholder="File name">
+            <textarea id="fileContent" placeholder="File content"></textarea>
+            <button onclick="createFile()">Create</button>
+            <button onclick="closeModal('createFileModal')">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Create Directory Modal -->
+    <div id="createDirModal" class="modal">
+        <div class="modal-content">
+            <h2>Create New Directory</h2>
+            <input type="text" id="newDirName" placeholder="Directory name">
+            <button onclick="createDirectory()">Create</button>
+            <button onclick="closeModal('createDirModal')">Cancel</button>
+        </div>
+    </div>
+
+    <!-- View File Modal -->
+    <div id="viewModal" class="modal">
+        <div class="modal-content">
+            <h2>View File</h2>
+            <textarea id="viewContent" readonly></textarea>
+            <div class="modal-buttons">
+                <button onclick="closeModal('viewModal')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this modal for editing -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h2>Edit File</h2>
+            <textarea id="editContent"></textarea>
+            <div class="modal-buttons">
+                <button onclick="saveEdit()">Save</button>
+                <button onclick="closeModal('editModal')">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <!-- Add this modal for renaming -->
+    <!-- Replace the rename modal with this -->
+    <div id="renameModal" class="modal">
+        <div class="modal-content">
+            <h2>Rename File</h2>
+            <input type="text" id="renameFileName" placeholder="New file name">
+            <div class="modal-buttons">
+                <button onclick="saveRename()">Rename</button>
+                <button onclick="closeModal('renameModal')">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
