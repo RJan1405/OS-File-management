@@ -1,0 +1,165 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #ecf0f1;
+    --text-color: #2c3e50;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.header button {
+    margin-right: 10px;
+    padding: 8px 16px;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.file-info i {
+    margin-right: 10px;
+}
+
+.file-actions button {
+    margin-left: 5px;
+    padding: 5px 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    position: relative;
+    border-radius: 8px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    background: white;
+}
+
+.close-btn {
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0 8px;
+    color: #666;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+.content-wrapper {
+    max-height: calc(80vh - 100px);
+    overflow-y: auto;
+    padding: 10px 0;
+}
+
+#viewContent {
+    white-space: pre-wrap;
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: monospace;
+    margin: 0;
+    overflow-x: auto;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+}
+
+textarea {
+    height: 200px;
+}
+
+#currentPath {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+#fileContent {
+    white-space: pre-wrap;
+    background-color: #f5f5f5;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Add these styles */
+#newFileName {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#editContent {
+    width: 100%;
+    height: 300px;
+    margin: 10px 0;
+    padding: 10px;
+    font-family: monospace;
+    resize: vertical;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
